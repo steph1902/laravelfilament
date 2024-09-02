@@ -19,4 +19,11 @@ class Product extends Model
         return $this->hasMany(ProductColour::class);
     }
 
+    protected $casts = 
+    [
+        'product_image' => 'array',
+        'colour_name' => 'array',
+        'size_name' => 'array',
+    ];
+
 }

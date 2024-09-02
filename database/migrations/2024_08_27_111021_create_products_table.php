@@ -17,11 +17,15 @@ return new class extends Migration
             $table->decimal('price_khr', 15, 2)->nullable();
             $table->decimal('price_vnd', 15, 2)->nullable();
             $table->decimal('price_thb', 15, 2)->nullable();
-            $table->string('product_image')->nullable();
+            $table->string('product_image')->nullable();            
             $table->string('category');
             $table->boolean('status')->default(true);
             $table->boolean('hot_items_flag')->default(false);
             $table->boolean('new_collections_flag')->default(false);
+
+            $table->string('colour_name')->nullable();
+            $table->string('size_name')->nullable();
+
             $table->timestamps();
         });
     }

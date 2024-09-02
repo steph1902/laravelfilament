@@ -27,11 +27,14 @@ class ProductResource extends Resource
     {
         return $form->schema([                
                 Forms\Components\TextInput::make('name')->required()->maxLength(255),
-                Forms\Components\TextInput::make('price_khr')->numeric()->prefix('៛')->maxValue(42949672.95),
-                Forms\Components\TextInput::make('price_vnd')->numeric()->prefix('₫')->maxValue(42949672.95),
-                Forms\Components\TextInput::make('price_thb')->numeric()->prefix('฿')->maxValue(42949672.95),
+                Forms\Components\TextInput::make('price_khr')->label('Price (KHR)')->numeric()->prefix('៛')->maxValue(42949672.95),
+                Forms\Components\TextInput::make('price_vnd')->label('Price (VND)')->numeric()->prefix('₫')->maxValue(42949672.95),
+                Forms\Components\TextInput::make('price_thb')->label('Price (THB)')->numeric()->prefix('฿')->maxValue(42949672.95),
+
+                Forms\Components\TextInput::make('size_name')->label('Size')->placeholder('S,M,L')->required()->maxLength(255),
+                Forms\Components\TextInput::make('colour_name')->label('Colour')->placeholder('Brown , Cream')->required()->maxLength(255),
                 
-                FileUpload::make('product_image')->image(),
+                FileUpload::make('product_image')->image()->multiple()->reorderable()->appendFiles(),
 
                 Forms\Components\Select::make('category')->options([
                     'dress' => 'Dress',
@@ -53,11 +56,14 @@ class ProductResource extends Resource
         return $table
             ->columns([
                 //
-                Tables\Columns\TextColumn::make('name')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('name')->searchable()->sortable(),            
+                Tables\Columns\ImageColumn::make('product_image'),
                 Tables\Columns\TextColumn::make('price_khr')->sortable(),
                 Tables\Columns\TextColumn::make('price_vnd')->sortable(),
                 Tables\Columns\TextColumn::make('price_thb')->sortable(),
                 Tables\Columns\TextColumn::make('category')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('size_name')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('colour_name')->searchable()->sortable(),                                
                 Tables\Columns\ToggleColumn::make('status')->sortable(),
                 Tables\Columns\ToggleColumn::make('hot_items_flag')->sortable(),
                 Tables\Columns\ToggleColumn::make('new_collections_flag')->sortable(),                
