@@ -316,7 +316,7 @@ ol {
 -----------------------*/
 
 .header {
-	background: #ffffff;
+	background: transparent !important;
 }
 
 .header__top {
@@ -479,10 +479,10 @@ ol {
 }
 
 .header__menu ul li a {
-	font-size: 18px;
-	color: #111111;
+	font-size: 14px;
+	color: #ffffff;
 	display: block;
-	font-weight: 600;
+	/* font-weight: 600; */
 	position: relative;
 	padding: 3px 0;
 }
