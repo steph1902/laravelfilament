@@ -24,50 +24,6 @@
 	<link rel="stylesheet" href="{{asset('malefashion-master/css/style.css')}}" type="text/css">
 
 
-    <style>
-        body
-        {            
-            background-image: url('{{ asset('landscape-photos/1.png') }}');
-            background-size: cover;
-            background-repeat: no-repeat;
-            position: center;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-        .header__menu
-        {
-            background-color: transparent !important;
-        }
-        .hero-section-2
-        {
-            background-image: url('{{ asset('landscape-photos/2.png') }}');
-            background-size: cover;
-            background-repeat: no-repeat;
-            position: center;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-
-        }
-        .hero-section-3
-        {
-            background-image: url('{{ asset('landscape-photos/3.png') }}');
-            background-size: cover;
-            background-repeat: no-repeat;
-            position: center;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-
-        }
-    </style>
 
 </head>
 
@@ -140,7 +96,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        <a href="./index.html"><img src="{{asset('logo/logo.png')}}" alt="" height="100px" ></a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
@@ -175,6 +131,9 @@
         </div>
     </header>
     <!-- Header Section End -->
+
+
+    
 
     <!-- Breadcrumb Section Begin -->
     {{-- <section class="breadcrumb-option">
