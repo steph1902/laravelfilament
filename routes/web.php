@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('all-products', function () {
-    return view('allproducts');
-});
+// Route::get('all-products', function () {
+//     return view('allproducts');
+// });
+
+Route::get('all-products', ProductController::class . '@index')->name('all-products');
+Route::get('product-details/{id}', ProductController::class . '@productDetails')->name('product-details');
 
 // php artisan make:filament-relation-manager PatientResource treatments description

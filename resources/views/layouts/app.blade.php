@@ -41,14 +41,27 @@
                 <a href="#">Sign in</a>
                 <a href="#">FAQs</a>
             </div>
+
+
             <div class="offcanvas__top__hover">
-                <span>Usd <i class="arrow_carrot-down"></i></span>
+                <select id="currency-selector-mobile">
+                    <option value="khr" selected>KHR</option>
+                    <option value="vnd">VND</option>
+                    <option value="thb">THB</option>
+                </select>
+                {{-- <span>Usd <i class="arrow_carrot-down"></i></span>
                 <ul>
                     <li>USD</li>
                     <li>EUR</li>
                     <li>USD</li>
-                </ul>
+                </ul> --}}
             </div>
+
+            <!-- Add a dropdown menu or button group to select the currency -->
+            
+
+
+
         </div>
         <div class="offcanvas__nav__option">
             <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
@@ -80,12 +93,17 @@
                                 <a href="#">FAQs</a>
                             </div>
                             <div class="header__top__hover">
-                                <span>Usd <i class="arrow_carrot-down"></i></span>
-                                <ul>
+                                {{-- <span>Usd <i class="arrow_carrot-down"></i></span> --}}
+                                {{-- <ul>
                                     <li>USD</li>
                                     <li>EUR</li>
                                     <li>USD</li>
-                                </ul>
+                                </ul> --}}
+                                <select class="currency-select" id="currency-selector">
+                                    <option value="khr" selected>KHR</option>
+                                    <option value="vnd">VND</option>
+                                    <option value="thb">THB</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -236,6 +254,7 @@
     <!-- Search End -->
 
     <!-- Js Plugins -->
+    
 
 	<script src="{{asset('malefashion-master/js/jquery-3.3.1.min.js')}}"></script>
 	<script src="{{asset('malefashion-master/js/bootstrap.min.js')}}"></script>
@@ -247,8 +266,36 @@
 	<script src="{{asset('malefashion-master/js/mixitup.min.js')}}"></script>
 	<script src="{{asset('malefashion-master/js/owl.carousel.min.js')}}"></script>
 	<script src="{{asset('malefashion-master/js/main.js')}}"></script>
+
+
+
+    
+
+
+
 </body>
 
+
+<script>
+    $(document).ready(function() {
+        console.log('jQuery is ready!');
+        var currencySelector = $('#currency-selector');
+        if (currencySelector.length) {
+            $('.price-vnd, .price-thb').hide(); 
+
+            currencySelector.on('change', function() {
+                var selectedCurrency = $(this).val(); 
+                if (selectedCurrency) {
+                    console.log('Selected currency:', selectedCurrency);
+
+                    $('.price-khr, .price-vnd, .price-thb').hide();
+
+                    $('.price-' + selectedCurrency).show();
+                }
+            });
+        }
+    });
+</script>
+
+
 </html>
-
-

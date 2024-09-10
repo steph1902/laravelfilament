@@ -7,6 +7,11 @@
     {
         color: black;
     }
+    .five-columns {
+        flex: 0 0 20%;
+        max-width: 20%;
+        margin-bottom:20px;
+    }
 </style>
 
 <body>
@@ -50,52 +55,107 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
-                    <div class="card h-100 text-center">
-                        <img class="card-img-top" src="image10.png" alt="Ego 01(B)" height="200">
-                        <div class="card-body">
-                            <h5 class="card-title">Ego 01(B)</h5>
-                            <p class="card-text text-muted">USD$ 350</p>
-                            <p class="text-muted">+4 Colors</p>
-                        </div>
-                        <div class="card-footer">
-                            <i class="far fa-heart wishlist"></i>
-                        </div>
+                @foreach ($products as $product)
+                    @if (isset($product->product_image[0]))
+                    <div class="col five-columns mb-20">
+                        <div class="card h-100 border-0">
+                            <a href="{{ route('product-details', $product->id) }}">
+                                <img class="card-img-top img-fluid" src="{{ asset('storage/' . $product->product_image[0]) }}" alt="Ego 01(B)" style="max-height: 200px; object-fit: cover;">
+                            </a>
+                            <!-- rest of the code -->    
+                            
+                            
+                            <div class="card-body">
+                                <h5 class="card-title">{{$product->name}}</h5>
+                                <p class="card-text text-muted">
+                                  @if(isset($product->price_khr))
+                                    <span class="price-khr"> ៛ {{ number_format($product->price_khr) }}</span>
+                                  @endif
+                                  @if(isset($product->price_vnd))
+                                    <span class="price-vnd"> ₫ {{ number_format($product->price_vnd) }}</span>
+                                  @endif
+                                  @if(isset($product->price_thb))
+                                    <span class="price-thb"> ฿ {{ number_format($product->price_thb) }}</span>
+                                  @endif
+                                </p>
+                                {{-- <p class="card-text text-muted">USD$ 350</p> --}}
+
+
+                                <p class="text-muted">+4 Colors</p>
+                            </div>
+                            {{-- <div class="card-footer">
+                                <i class="far fa-heart wishlist"></i>
+                            </div> --}}
+                        </div>                    
                     </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
-                    <div class="card h-100 text-center">
-                        <img class="card-img-top" src="image11.png" alt="Ego KC1" height="200">
-                        <div class="card-body">
-                            <h5 class="card-title">Ego KC1</h5>
-                            <p class="card-text text-muted">USD$ 350</p>
-                            <p class="text-muted">+4 Colors</p>
-                        </div>
-                        <div class="card-footer">
-                            <i class="far fa-heart wishlist"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
-                    <div class="card h-100 text-center">
-                        <img class="card-img-top" src="image12.png" alt="Tap Tap KC3(GR)" height="200">
-                        <div class="card-body">
-                            <h5 class="card-title">Tap Tap KC3(GR)</h5>
-                            <p class="card-text text-muted">USD$ 340</p>
-                            <p class="text-muted">+4 Colors</p>
-                        </div>
-                        <div class="card-footer">
-                            <i class="far fa-heart wishlist"></i>
-                        </div>
-                    </div>
-                </div>
+                    
+                    @endif
+                @endforeach               
             </div>
+            
         </div>
     </div>
 
     
 </body>
-</html>
+
+
+
+{{-- 
+<script type="text/javascript">
+    window.onload = function() {
+
+        try {
+            const currencySelector = document.getElementById('currency-selector');
+            if (!currencySelector) {
+                console.error('Currency selector not found');
+                return;
+            }
+
+            const prices = document.querySelectorAll('.price-khr, .price-vnd, .price-thb');
+            if (!prices || prices.length === 0) {
+                console.error('Prices not found');
+                return;
+            }
+
+            // Set the default currency to 'khr'
+            currencySelector.value = 'khr';
+
+            // Hide all prices initially except the default currency (KHR)
+            prices.forEach((price) => {
+                if (!price.classList.contains('price-khr')) {
+                    price.style.display = 'none';
+                }
+            });
+
+            // Add an event listener to the currency selector
+            currencySelector.addEventListener('change', (e) => {
+                const selectedCurrency = e.target.value;
+                console.log('Selected currency: ${selectedCurrency}');
+
+                // Hide all prices first
+                prices.forEach((price) => {
+                    price.style.display = 'none';  // Hide all prices
+                });
+
+                // Show the selected currency prices
+                const selectedPrices = document.querySelectorAll(`.price-${selectedCurrency}`);
+                if (!selectedPrices || selectedPrices.length === 0) {
+                    console.error(`No prices found for currency ${selectedCurrency}`);
+                    return;
+                }
+
+                selectedPrices.forEach((price) => {
+                    price.style.display = 'inline'; // Show the selected currency prices
+                });
+            });
+        } catch (error) {
+            console.error('Error occurred:', error);
+        }
+    };
+</script> --}}
+
+
 
 
 @endsection

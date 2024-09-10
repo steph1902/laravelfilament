@@ -123,12 +123,7 @@ body {
             color: white;
             font-size: 1rem;
         }
-
-        /* 
-        public/portrait-photos/1 2.jpg 
-        public/portrait-photos/1 3.jpg 
-        public/portrait-photos/1.jpg */
-
+        
         .links {
             font-size: 1.5rem;
         }
@@ -142,7 +137,6 @@ body {
         <div style="margin-top:20%;"></div>
         <div class="hero-content">
             <h3 style="color: white !important;">DIANA DRESS</h3>
-            {{-- <a href="#" class="btn btn-primary btn-lg" style="color: white !important;">Shop the Collection</a> --}}
             <a class="link-text" href="#" class="btn-lg" style="color: white !important;">Shop the Collection</a>
             <a class="link-text" href="#" class="btn-lg" style="color: white !important;">Purchase Diana Dress</a>
         </div>
@@ -152,7 +146,6 @@ body {
         <div style="margin-top:1%;"></div>
         <div class="hero-content">
             <h3 style="color: white !important;">TALIA ONE SET</h3>
-            {{-- <a href="#" class="btn btn-primary btn-lg" style="color: white !important;">Shop the Collection</a> --}}
             <a class="link-text" href="#" class="btn-lg" style="color: white !important;">Shop the Collection</a>
             <a class="link-text" href="#" class="btn-lg" style="color: white !important;">Purchase Talia One Set</a>
         </div>
@@ -162,7 +155,6 @@ body {
         <div style="margin-top:0.001%;"></div>
         <div class="hero-content">
             <h3 style="color: white !important;">IVY JEANS</h3>
-            {{-- <a href="#" class="btn btn-primary btn-lg" style="color: white !important;">Shop the Collection</a> --}}
             <a class="link-text" href="#" class="btn-lg" style="color: white !important;">Shop the Collection</a>
             <a class="link-text" href="#" class="btn-lg" style="color: white !important;">Purchase Ivy Jeans</a>
         </div>
