@@ -294,8 +294,39 @@
                 }
             });
         }
+
+        // Category Filter Script
+        $('.category-button').on('click', function() {
+            var category = $(this).attr('category');  
+            console.log('Category:', category);
+
+            if (category === 'all') {
+                // $('.product').show();  
+                $('.product').fadeIn(400);  // Fade in all products
+
+            } else {
+                $('.product').fadeOut(200, function() {  // First fade out all products
+                    $('.product.' + category).fadeIn(400);  // Then fade in only the selected category
+                });
+                // $('.product').hide();  
+                // $('.product.' + category).show();  
+            }
+        });
     });
 </script>
+
+
+{{-- 
+<script>
+    $(document).ready(function() {
+      $('.category-button').on('click', function() {
+        var category = $(this).attr('data-category');
+        console.log('Category:', category);
+        $('.product').not('.' + category).hide();
+        $('.product.' + category).show();
+      });
+    });
+</script> --}}
 
 
 </html>

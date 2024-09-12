@@ -18,4 +18,16 @@ class ProductController extends Controller
         $product = Product::find($id);
         return view('productdetails', compact('product'));
     }
+    public function aboutUs()
+    {
+        return view('aboutus');
+    }
+    public function blog()
+    {
+        return view('blog');
+    }
+    public function faq()
+    {
+        return view('faq');
+    }
 }
