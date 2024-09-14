@@ -44,7 +44,7 @@
         </div>
 
         <div class="py-4">
-            <small>View all (25 Products Available)</small>
+            <small>25 Products Available</small>
             <div class="d-flex justify-content-between align-items-center mb-4">
                 {{-- <div>
                     <i class="fas fa-th-large"></i>

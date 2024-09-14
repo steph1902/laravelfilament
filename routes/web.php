@@ -52,3 +52,18 @@ Route::get('customer-appreciation', function () {
 
 
 // php artisan make:filament-relation-manager PatientResource treatments description
+
+Route::get('hot-items', ProductController::class . '@hotItems')->name('hot-items');
+Route::get('new-collections', ProductController::class . '@newCollections')->name('new-collections');
+Route::get('tops', ProductController::class . '@tops')->name('tops');
+Route::get('pants', ProductController::class . '@pants')->name('pants');
+Route::get('dresses', ProductController::class . '@dresses')->name('dresses');
+Route::get('skirts', ProductController::class . '@skirts')->name('skirts');
+
+
+
+// #todo
+// Access to fetch at 'http://localhost:8000/storage/01J70YK3808XVCQS5RNT2SPH4F.jpg' 
+// from origin 'http://127.0.0.1:8000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' 
+// header is present on the requested resource. If an opaque response serves your needs, 
+// set the request's mode to 'no-cors' to fetch the resource with CORS disabled.

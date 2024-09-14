@@ -104,7 +104,8 @@
                             </div>
                         </div>
                         <div class="product__details__cart__option">
-                            <a href="#" class="primary-btn">add to cart</a>
+                            <a href="https://t.me/joinchat/Lc6yIuRZU4YyNjI6" class="primary-btn" target="_blank">
+                                Join our Telegram community to purchase this product</a>
                         </div>
                         <div class="product__details__last__option">
                             <ul>
