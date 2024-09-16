@@ -67,7 +67,7 @@ body {
         }
         .hero-section-3
         {
-            background-image: url('{{ asset('landscape-photos/3.png') }}');
+            background-image: url('{{ asset('landscape-photos/bianca-dress-expanded.png') }}');
             background-size: cover;
             background-repeat: no-repeat;
             position: center;
@@ -110,7 +110,7 @@ body {
             font-size: 1rem;
         }
         .hero-section-3 {
-            background-image: url('{{ asset('portrait-photos/3.jpg') }}');
+            background-image: url('{{ asset('portrait-photos/bianca-dress-portrait.jpg') }}');
             background-size: cover;
             background-position: center;
             background-size: cover;
@@ -137,8 +137,15 @@ body {
         <div style="margin-top:20%;"></div>
         <div class="hero-content">
             <h3 style="color: white !important;">DIANA DRESS</h3>
-            <a class="link-text" href="#" class="btn-lg" style="color: white !important;">Shop the Collection</a>
-            <a class="link-text" href="#" class="btn-lg" style="color: white !important;">Purchase Diana Dress</a>
+
+            @php
+                $diana = \App\Models\Product::where('name', 'Diana Dress')->first();
+            @endphp
+
+
+            <a class="link-text" href="{{ route('all-products') }}" class="btn-lg" style="color: white !important;">Shop the Collection</a>
+            <a class="link-text" href="{{ route('product-details',['id' => $diana->id]) }}" class="btn-lg" style="color: white !important;">Purchase Diana Dress</a>
+            {{-- <a class="link-text" href="{{ route('product-details'. ['id' => $diana->id]) }}" class="btn-lg" style="color: white !important;">Purchase Diana Dress</a> --}}
         </div>
     </main>
 
@@ -146,17 +153,27 @@ body {
         <div style="margin-top:1%;"></div>
         <div class="hero-content">
             <h3 style="color: white !important;">TALIA ONE SET</h3>
-            <a class="link-text" href="#" class="btn-lg" style="color: white !important;">Shop the Collection</a>
-            <a class="link-text" href="#" class="btn-lg" style="color: white !important;">Purchase Talia One Set</a>
+
+            @php
+                $talia = \App\Models\Product::where('name', 'Talia One Set')->first();
+            @endphp
+
+            <a class="link-text" href="{{ route('all-products') }}" class="btn-lg" style="color: white !important;">Shop the Collection</a>
+            <a class="link-text" href="{{ route('product-details',['id' => $talia->id]) }}" class="btn-lg" style="color: white !important;">Purchase Talia One Set</a>
         </div>
     </main>
 
     <main class="hero-section-3">
         <div style="margin-top:0.001%;"></div>
         <div class="hero-content">
-            <h3 style="color: white !important;">IVY JEANS</h3>
-            <a class="link-text" href="#" class="btn-lg" style="color: white !important;">Shop the Collection</a>
-            <a class="link-text" href="#" class="btn-lg" style="color: white !important;">Purchase Ivy Jeans</a>
+            <h3 style="color: white !important;">BIANCA DRESS</h3>
+
+            @php
+                $bianca = \App\Models\Product::where('name', 'Bianca Dress')->first();
+            @endphp
+
+            <a class="link-text" href="{{ route('all-products') }}" class="btn-lg" style="color: white !important;">Shop the Collection</a>
+            <a class="link-text" href="{{ route('product-details',['id' => $bianca->id]) }}" class="btn-lg" style="color: white !important;">Purchase Bianca Dress</a>            
         </div>
     </main>
 

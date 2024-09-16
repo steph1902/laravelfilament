@@ -81,7 +81,7 @@
                                 {{-- <p class="card-text text-muted">USD$ 350</p> --}}
 
 
-                                <p class="text-muted">+4 Colors</p>
+                                {{-- <p class="text-muted">+4 Colors</p> --}}
                             </div>
                             {{-- <div class="card-footer">
                                 <i class="far fa-heart wishlist"></i>
