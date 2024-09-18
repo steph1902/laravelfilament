@@ -65,13 +65,19 @@
                         </h3>                        
                         <h4>                            
                             @if(isset($product->price_khr))
-                                <span class="price-khr"> ៛ {{ number_format($product->price_khr) }}</span>
+                                <span class="product-price price-khr"> ៛ {{ number_format($product->price_khr) }}</span>
                             @endif
                             @if(isset($product->price_vnd))
-                                <span class="price-vnd"> ₫ {{ number_format($product->price_vnd) }}</span>
+                                <span class="product-price price-vnd"> ₫ {{ number_format($product->price_vnd) }}</span>
                             @endif
                             @if(isset($product->price_thb))
-                                <span class="price-thb"> ฿ {{ number_format($product->price_thb) }}</span>
+                                <span class="product-price price-thb"> ฿ {{ number_format($product->price_thb) }}</span>
+                            @endif
+                            @if(isset($product->price_usd))
+                                <span class="product-price price-usd"> US$ {{ number_format($product->price_usd) }}</span>
+                            @endif
+                            @if(isset($product->price_idr))
+                                <span class="product-price price-idr"> IDR {{ number_format($product->price_idr) }}</span>
                             @endif
                         </h4>
                         <div class="product__details__option">

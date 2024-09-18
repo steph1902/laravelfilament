@@ -30,6 +30,8 @@ class ProductResource extends Resource
                 Forms\Components\TextInput::make('price_khr')->label('Price (KHR)')->numeric()->prefix('៛')->maxValue(42949672.95),
                 Forms\Components\TextInput::make('price_vnd')->label('Price (VND)')->numeric()->prefix('₫')->maxValue(42949672.95),
                 Forms\Components\TextInput::make('price_thb')->label('Price (THB)')->numeric()->prefix('฿')->maxValue(42949672.95),
+                Forms\Components\TextInput::make('price_idr')->label('Price (IDR)')->numeric()->prefix('IDR')->maxValue(42949672.95),
+                Forms\Components\TextInput::make('price_usd')->label('Price (USD)')->numeric()->prefix('USD')->maxValue(42949672.95),
 
                 Forms\Components\TextInput::make('size_name')->label('Size')->placeholder('S,M,L')->required()->maxLength(255),
                 Forms\Components\TextInput::make('colour_name')->label('Colour')->placeholder('Brown , Cream')->required()->maxLength(255),
@@ -61,6 +63,8 @@ class ProductResource extends Resource
                 Tables\Columns\TextColumn::make('price_khr')->sortable(),
                 Tables\Columns\TextColumn::make('price_vnd')->sortable(),
                 Tables\Columns\TextColumn::make('price_thb')->sortable(),
+                Tables\Columns\TextColumn::make('price_usd')->sortable(),
+                Tables\Columns\TextColumn::make('price_idr')->sortable(),
                 Tables\Columns\TextColumn::make('category')->searchable()->sortable(),
                 Tables\Columns\TextColumn::make('size_name')->searchable()->sortable(),
                 Tables\Columns\TextColumn::make('colour_name')->searchable()->sortable(),                                
