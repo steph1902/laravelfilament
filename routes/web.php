@@ -35,3 +35,4 @@ Route::get('pants', [ProductController::class, 'pants'])->name('pants');
 Route::get('dresses', [ProductController::class, 'dresses'])->name('dresses');
 Route::get('skirts', [ProductController::class, 'skirts'])->name('skirts');
 
+// ALTER TABLE laravelfilament.products ADD show_prices_flag TINYINT NULL;

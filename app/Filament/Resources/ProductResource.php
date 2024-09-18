@@ -49,6 +49,7 @@ class ProductResource extends Resource
                 Toggle::make('status'),
                 Toggle::make('hot_items_flag'),
                 Toggle::make('new_collections_flag'),
+                Toggle::make('show_prices_flag'),
                 
             ]);
     }
@@ -70,7 +71,8 @@ class ProductResource extends Resource
                 Tables\Columns\TextColumn::make('colour_name')->searchable()->sortable(),                                
                 Tables\Columns\ToggleColumn::make('status')->sortable(),
                 Tables\Columns\ToggleColumn::make('hot_items_flag')->sortable(),
-                Tables\Columns\ToggleColumn::make('new_collections_flag')->sortable(),                
+                Tables\Columns\ToggleColumn::make('new_collections_flag')->sortable(),  
+                Tables\Columns\ToggleColumn::make('show_prices_flag')->sortable(),              
             ])
             ->filters([
                 //

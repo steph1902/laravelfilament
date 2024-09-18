@@ -62,24 +62,37 @@
                     <div class="product__details__text">
                         <h3>
                             {{$product->name}}
-                        </h3>                        
-                        <h4>                            
-                            @if(isset($product->price_khr))
-                                <span class="product-price price-khr"> ៛ {{ number_format($product->price_khr) }}</span>
-                            @endif
-                            @if(isset($product->price_vnd))
-                                <span class="product-price price-vnd"> ₫ {{ number_format($product->price_vnd) }}</span>
-                            @endif
-                            @if(isset($product->price_thb))
-                                <span class="product-price price-thb"> ฿ {{ number_format($product->price_thb) }}</span>
-                            @endif
-                            @if(isset($product->price_usd))
-                                <span class="product-price price-usd"> US$ {{ number_format($product->price_usd) }}</span>
-                            @endif
-                            @if(isset($product->price_idr))
-                                <span class="product-price price-idr"> IDR {{ number_format($product->price_idr) }}</span>
-                            @endif
-                        </h4>
+                        </h3>
+                        @if($product->show_prices_flag == 1)                        
+                            <h4>                            
+                                @if(isset($product->price_khr))
+                                    <span class="product-price price-khr"> ៛ {{ number_format($product->price_khr) }}</span>
+                                @endif
+                                @if(isset($product->price_vnd))
+                                    <span class="product-price price-vnd"> ₫ {{ number_format($product->price_vnd) }}</span>
+                                @endif
+                                @if(isset($product->price_thb))
+                                    <span class="product-price price-thb"> ฿ {{ number_format($product->price_thb) }}</span>
+                                @endif
+                                @if(isset($product->price_usd))
+                                    <span class="product-price price-usd"> US$ {{ number_format($product->price_usd) }}</span>
+                                @endif
+                                @if(isset($product->price_idr))
+                                    <span class="product-price price-idr"> IDR {{ number_format($product->price_idr) }}</span>
+                                @endif
+                            </h4>
+                        @endif
+
+                        {{-- <br> --}}
+                        <p id="product-name-and-price">
+                            <small>
+                                <i>Join <a href="https://t.me/+2JsS2nzNsrRkMGE9" target="_blank">Telegram</a> For Price Detail </i>
+                            </small>
+                        </p>
+                        {{-- <br> --}}
+
+
+
                         <div class="product__details__option">
                             <div class="product__details__option__size">
                                 <span>Size:</span>
